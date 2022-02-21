@@ -2,7 +2,6 @@
     height: auto;
     width: auto;
     border: 1px solid black;
-    background-color: aqua;
 }
 .pastille{
     width: 20px;
@@ -12,6 +11,12 @@
     display: inline-block;
 
 }
-.bg{
-    background-color: red;
+.red{
+    background-color: lightcoral;
+}
+.yellow{
+    background-color: lightyellow;
+}
+.green{
+    background-color: lightgreen;
 }
