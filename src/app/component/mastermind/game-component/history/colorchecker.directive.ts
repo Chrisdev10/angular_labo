@@ -1,11 +1,11 @@
 import { Directive, ElementRef, HostListener, Input, OnInit, Output } from '@angular/core';
-
+import * as _ from 'lodash';
 @Directive({
   selector: '[appColorchecker]'
 })
 export class ColorcheckerDirective implements OnInit {
-  @Input('appColorchecker') tabToFind: string[] | any;
-  @Input() tabInput: string[] | any;
+  @Input('appColorchecker') tabToFind?: string[];
+  @Input() tabInput?: string[];
   @Input() getOne:string | any;
   @Input() idOf:number | any;
 
@@ -15,13 +15,27 @@ export class ColorcheckerDirective implements OnInit {
   ) { }
   ngOnInit(): void {
     
-    if(this.getOne == this.tabToFind[this.idOf]){
-      console.log(this.getOne+"  "+this.tabToFind[this.idOf]);
+    
+    if(this.tabToFind && this.tabInput){
       
-      this.elem.nativeElement.style.backgroundColor = 'lightgreen';
-    }else{
-      this.elem.nativeElement.style.backgroundColor = 'tomato';
+      if(this.getOne == this.tabToFind[this.idOf]){        
+        this.elem.nativeElement.style.backgroundColor = 'lightgreen';
+      }else{
+        if(_.includes(this.tabToFind, this.getOne)){
+          for(let i = 0; i < this.tabToFind.length ; i++){
+            if(i !== this.idOf && this.tabInput[i] !== this.tabToFind[i] && this.tabToFind[i] === this.getOne){
+              this.elem.nativeElement.style.backgroundColor = 'yellow';
+            }
+          }          
+          if(this.elem.nativeElement.style.backgroundColor !== 'yellow'){
+            this.elem.nativeElement.style.backgroundColor = 'red';
+          }
 
+        }else{
+          this.elem.nativeElement.style.backgroundColor = 'tomato';
+
+        }
+      }
     }
   }
 

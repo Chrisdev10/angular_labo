@@ -2,7 +2,8 @@ div{
     border: 1px solid black
 }
 .design{
-    
+    padding: 50px 0px;
+    justify-content: space-around;
     width: 1200px;
     min-height: 500px;
     background-color: antiquewhite;

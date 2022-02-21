@@ -15,13 +15,7 @@ export class HistoryComponent implements OnInit {
 
   ngOnInit(): void {
    
-   
+  
   }
-  getBg(id:number): string{
-    console.log(this.getSample);
-    return 'red'
-  }
-
- 
-
+  
 }
