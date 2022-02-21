@@ -1,0 +1,12 @@
+<div class="container d-flex">
+    <div class="row">
+        <div class="gridPlay">
+
+        </div>
+    </div>
+    <div class="row">
+        <ng-container class="d-flex" *ngFor="let colors of colorTab">
+            <div class="pastille" [ngStyle]="{'backgroundColor': colors}"></div>
+        </ng-container>
+    </div>
+</div>
