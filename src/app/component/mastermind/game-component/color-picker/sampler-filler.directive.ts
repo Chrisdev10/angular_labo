@@ -7,6 +7,7 @@ import { EventEmitter } from '@angular/core';
 export class SamplerFillerDirective implements OnInit {
   @Input('appSamplerFiller') sample?: string;
   @Output() removeBuffer: EventEmitter<boolean> = new EventEmitter();
+  @Output() getNewColors: EventEmitter<string> = new EventEmitter();
   constructor(
     private elem: ElementRef
   ) { }
@@ -16,16 +17,18 @@ export class SamplerFillerDirective implements OnInit {
   @HostListener('click') clickcheck(){
     if(this.sample){
       this.elem.nativeElement.style.backgroundColor = this.sample;
-    }else{
-      this.elem.nativeElement.style.backgroundColor = 'white';
+      this.getNewColors.emit(this.sample);
+      this.removeBuffer.emit(true);
     }
   }
 
   @HostListener('dblclick') remover(){
-    if(this.sample){
-      this.elem.nativeElement.style.backgroundColor = 'white';
-      this.removeBuffer.emit(true);
-    }
+  if(this.elem.nativeElement.style.backgroundColor !== 'white'){
+    this.elem.nativeElement.style.backgroundColor = 'white';
+    this.removeBuffer.emit(true);
+    this.getNewColors.emit('white');
+  }
+    
   }
   
 }

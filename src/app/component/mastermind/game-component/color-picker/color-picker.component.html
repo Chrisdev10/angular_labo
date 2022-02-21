@@ -1,14 +1,16 @@
-<div class="container d-flex">
+<div class="container">
     <div class="row">
-        <ng-container class="d-flex" *ngFor="let colors of colorTab">
-            <div [appSamplerFiller]="colorChoosed" (removeBuffer)="resetColor()" class="pastille"></div>
+        <ng-container class="col" *ngFor="let colors of tabSize;let i = index">
+            <div [appSamplerFiller]="colorChoosed" (removeBuffer)="resetColor()" (getNewColors)="saveChange($event, i)" class="pastille"></div>
         </ng-container>
     </div>
     <div class="row">
         <ng-container *ngIf="colorTab">
-            <ng-container class="d-flex" *ngFor="let colors of colorTab">
+            <ng-container class="col" *ngFor="let colors of colorTab">
                 <div (click)="getColor(colors)" class="pastille" [ngStyle]="{'backgroundColor': colors}"></div>
             </ng-container>
         </ng-container>
     </div>
+    <button (click)="sendSample()" >Valider</button>
+    <button>Reset</button>
 </div>
