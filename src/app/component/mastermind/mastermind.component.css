@@ -1,3 +1,17 @@
 div{
     border: 1px solid black
 }
+.design{
+    
+    width: 500px;
+    min-height: 500px;
+    background-color: antiquewhite;
+    box-shadow: 0px 0px 10px 10px antiquewhite;
+    margin: auto;
+    border-radius: 10px;
+}
+@media (max-width: 550px) { 
+    .design{
+        width: 80%;
+    }
+}

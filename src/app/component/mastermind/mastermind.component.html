@@ -1,5 +1,5 @@
-<div class="container d-flex">
+<div class="design container d-flex">
     <app-sampler></app-sampler>
     <app-color-picker (sample)="getNextSample($event)" [numberOf]="numberOf" [colorTab]="colorsTab"></app-color-picker>
-    <app-history [getSample]="next" ></app-history>
+    <app-history *ngFor="let test of next" [getSample]="next" ></app-history>
 </div>

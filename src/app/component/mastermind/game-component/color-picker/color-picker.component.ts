@@ -18,23 +18,23 @@ export class ColorPickerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.tabSize = Array(this.numberOf).fill("white").map((x,i)=> x);
-    this.colorPickedBuffer = Array(this.numberOf).fill("white").map((x,i)=> x);
+    this.tabSize = Array(this.numberOf).fill("antiquewhite").map((x,i)=> x);
+    this.colorPickedBuffer = Array(this.numberOf).fill("antiquewhite").map((x,i)=> x);
     
   }
   getColor(colors: string){
     this.colorChoosed = colors; 
   }
   
-  resetColor(){
-    this.colorChoosed = undefined;
+  resetColor(check:boolean){
+    if(check){
+      this.colorChoosed = undefined;
+    }
+    
   }
 
   saveChange(colors: string, id:number){
-    this.colorPickedBuffer[id] = colors;
-    console.log(this.colorPickedBuffer);
-    console.log(id);
-    
+    this.colorPickedBuffer[id] = colors;    
   }
 
   sendSample(){

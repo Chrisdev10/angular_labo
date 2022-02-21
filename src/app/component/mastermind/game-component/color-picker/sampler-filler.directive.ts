@@ -23,10 +23,10 @@ export class SamplerFillerDirective implements OnInit {
   }
 
   @HostListener('dblclick') remover(){
-  if(this.elem.nativeElement.style.backgroundColor !== 'white'){
-    this.elem.nativeElement.style.backgroundColor = 'white';
+  if(this.elem.nativeElement.style.backgroundColor !== 'antiquewhite'){
+    this.elem.nativeElement.style.backgroundColor = 'antiquewhite';
     this.removeBuffer.emit(true);
-    this.getNewColors.emit('white');
+    this.getNewColors.emit('antiquewhite');
   }
     
   }

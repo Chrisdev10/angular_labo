@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <ng-container class="col" *ngFor="let colors of tabSize;let i = index">
-            <div [appSamplerFiller]="colorChoosed" (removeBuffer)="resetColor()" (getNewColors)="saveChange($event, i)" class="pastille"></div>
+            <div [appSamplerFiller]="colorChoosed" (removeBuffer)="resetColor($event)" (getNewColors)="saveChange($event, i)" class="pastille"></div>
         </ng-container>
     </div>
     <div class="row">
