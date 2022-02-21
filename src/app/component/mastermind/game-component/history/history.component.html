@@ -1,9 +1,11 @@
-<ng-container *ngIf="getSample">
-    <ng-container class="col" *ngFor="let colors of getSample;trackBy: customTB">
-        <div>
-            <ng-template *ngFor="let items of colors">
-                <div class="pastille" [ngStyle]="{'backgroundColor': items}"></div>
-            </ng-template>
-        </div>
+
+<div class="history">
+    <ng-container *ngFor="let colors of getSample">
+    <div class="bg">
+        <ng-container *ngFor="let items of colors">
+            <div class="pastille" [ngStyle]="{'backgroundColor': items}"></div>
+        </ng-container>   
+    </div>
+        <br>
     </ng-container>
-</ng-container>
+</div> 

@@ -33,6 +33,10 @@ export class ColorPickerComponent implements OnInit {
     
   }
 
+  resetAll(){
+    this.ngOnInit();
+  }
+
   saveChange(colors: string, id:number){
     this.colorPickedBuffer[id] = colors;    
   }

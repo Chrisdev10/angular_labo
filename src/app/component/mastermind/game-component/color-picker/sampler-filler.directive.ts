@@ -12,7 +12,6 @@ export class SamplerFillerDirective implements OnInit {
     private elem: ElementRef
   ) { }
   ngOnInit(): void {
-    
   }
   @HostListener('click') clickcheck(){
     if(this.sample){

@@ -19,7 +19,6 @@ export class MastermindComponent implements OnInit {
     const newTry: string[]= [];
     tab.forEach( (x)=> newTry.push(x));
     this.next.push(newTry)
-    console.log(this.next);
   }
 
 }
