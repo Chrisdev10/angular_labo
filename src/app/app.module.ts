@@ -7,6 +7,7 @@ import { MastermindComponent } from './component/mastermind/mastermind.component
 import { ColorPickerComponent } from './component/mastermind/game-component/color-picker/color-picker.component';
 import { SamplerComponent } from './component/mastermind/game-component/sampler/sampler.component';
 import { HistoryComponent } from './component/mastermind/game-component/history/history.component';
+import { SamplerFillerDirective } from './component/mastermind/game-component/color-picker/sampler-filler.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HistoryComponent } from './component/mastermind/game-component/history/
     MastermindComponent,
     ColorPickerComponent,
     SamplerComponent,
-    HistoryComponent
+    HistoryComponent,
+    SamplerFillerDirective
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,14 @@
 <div class="container d-flex">
     <div class="row">
-        <div class="gridPlay">
-
-        </div>
+        <ng-container class="d-flex" *ngFor="let colors of colorTab">
+            <div [appSamplerFiller]="colorChoosed" (removeBuffer)="resetColor()" class="pastille"></div>
+        </ng-container>
     </div>
     <div class="row">
-        <ng-container class="d-flex" *ngFor="let colors of colorTab">
-            <div class="pastille" [ngStyle]="{'backgroundColor': colors}"></div>
+        <ng-container *ngIf="colorTab">
+            <ng-container class="d-flex" *ngFor="let colors of colorTab">
+                <div (click)="getColor(colors)" class="pastille" [ngStyle]="{'backgroundColor': colors}"></div>
+            </ng-container>
         </ng-container>
     </div>
 </div>

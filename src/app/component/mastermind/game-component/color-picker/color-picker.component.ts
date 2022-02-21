@@ -7,11 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ColorPickerComponent implements OnInit {
   @Input() colorTab?: string[];
+  colorChoosed: string|any;
   constructor() { }
 
   ngOnInit(): void {
     
   
+  }
+  getColor(colors: string){
+    this.colorChoosed = colors;
+  }
+  
+  resetColor(){
+    this.colorChoosed = undefined;
   }
 
 }
