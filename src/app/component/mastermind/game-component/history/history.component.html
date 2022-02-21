@@ -1,12 +1,15 @@
 
 <div class="history">
     <ng-container *ngFor="let colors of getSample">
-    
-    <ng-container *ngFor="let items of colors;let i = index;">
-        <div [ngClass]="getBg(i)" style="display:inline-block">
-            <div class="pastille" [ngStyle]="{'backgroundColor': items}"></div>
-        </div>
-    </ng-container>   
+        
+        <ng-container *ngFor="let items of colors;let i = index;">
+            <div [appColorchecker]="toFindColors" [idOf]="i" [tabInput]="colors" [getOne]="items" style="display:inline-block">
+                
+                <div class="pastille" [ngStyle]="{'backgroundColor': items}">
+
+                </div>
+            </div>
+        </ng-container>   
     
         <br>
     </ng-container>

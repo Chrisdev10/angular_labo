@@ -9,6 +9,7 @@ import { Observable, of, reduce } from 'rxjs';
 export class HistoryComponent implements OnInit {
   currentTab: string[]=[];
   @Input() getSample?: Array<string[]> | any;
+  colorBg?: Array<string[]> | any;
   @Input() toFindColors: string[] = [];
   constructor() { }
 
