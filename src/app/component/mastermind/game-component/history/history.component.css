@@ -1,15 +1,28 @@
 .history{
     height: auto;
     width: auto;
-    border: 1px solid black;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 .pastille{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     border: 1px solid black;
+    border-radius: 50%;
     display: inline-block;
 
+}
+.wrapper{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    margin-top: 40px;
+    border-radius: 10px;
 }
 .red{
     background-color: lightcoral;
@@ -19,4 +32,13 @@
 }
 .green{
     background-color: lightgreen;
+}
+
+@media (max-width: 550px) { 
+    .wrapper{
+        margin-top: 20px;
+    }
+    .history{
+        align-items: flex-start;
+    }
 }

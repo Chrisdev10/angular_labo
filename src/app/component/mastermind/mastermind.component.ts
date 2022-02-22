@@ -14,15 +14,15 @@ export class MastermindComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.initColors();
-    console.log(this.colorToFind);
-    
+    this.initColors();    
   }
 
   initColors(){
     for(let i = 0; i < this.numberOf;i++){
       this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.numberOf)]);
     }
+    console.log(this.colorToFind);
+    
   }
 
   getNextSample(tab: string[]){

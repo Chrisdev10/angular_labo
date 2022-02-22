@@ -14,7 +14,10 @@ export class ColorPickerComponent implements OnInit {
 
   tabSize: string[]|any;
   colorPickedBuffer: string[]|any;
+
   colorChoosed: string|any;
+  colorTabChoosed?: string[];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -24,6 +27,7 @@ export class ColorPickerComponent implements OnInit {
   }
   getColor(colors: string){
     this.colorChoosed = colors; 
+    
   }
   
   resetColor(check:boolean){

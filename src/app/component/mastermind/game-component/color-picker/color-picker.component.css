@@ -2,14 +2,22 @@
     border: 1px dotted red;
 }
 .pastille{
-    width: 20px;
-    height: 20px;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    
     border-radius: 50%;
     border: 1px solid black;
 }
 
-.growth{
-    width: 20px;
-    height: 20px;
-    border: 3px solid black;
+.pastille:active{
+    border: 2px dotted red;
+}
+
+.custom{
+    justify-content: space-around;
+}
+.pick{
+    box-shadow: 0px 0px 10px 10px white;
+    margin: 50px 20px;
 }
