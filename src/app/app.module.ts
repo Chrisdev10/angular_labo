@@ -9,6 +9,9 @@ import { SamplerComponent } from './component/mastermind/game-component/sampler/
 import { HistoryComponent } from './component/mastermind/game-component/history/history.component';
 import { SamplerFillerDirective } from './component/mastermind/game-component/color-picker/sampler-filler.directive';
 import { ColorcheckerDirective } from './component/mastermind/game-component/history/colorchecker.directive';
+import { MainComponent } from './component/main/main.component';
+import { AcceuilComponent } from './component/main/acceuil/acceuil.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ColorcheckerDirective } from './component/mastermind/game-component/his
     SamplerComponent,
     HistoryComponent,
     SamplerFillerDirective,
-    ColorcheckerDirective
+    ColorcheckerDirective,
+    MainComponent,
+    AcceuilComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

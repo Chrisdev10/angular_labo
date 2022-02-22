@@ -1,0 +1,11 @@
+<div class="main text-center">  
+    <button class="btn btn-outline-dark" routerLink="/mastermind/" [state]="{p:1, lvl:level}" >1 player</button>
+    <button disabled class="btn btn-outline-dark" routerLink="/mastermind/" [state]="{p:2, lvl:level}" >2 player (not working)</button>
+    <h5>select levels</h5>
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="level">
+        <option value="" disabled>Select level</option>
+        <option value="easy">easy</option>
+        <option value="medium">medium</option>
+        <option value="hard">hard</option>
+    </select>
+</div> 

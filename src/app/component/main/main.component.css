@@ -1,0 +1,8 @@
+img{
+    width:300px;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    grid-column: 1;
+    grid-row: 1;
+}

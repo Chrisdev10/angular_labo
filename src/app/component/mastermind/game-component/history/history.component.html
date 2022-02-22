@@ -3,10 +3,10 @@
     <ng-container *ngFor="let colors of getSample">
         <div class="wrapper">
         <ng-container *ngFor="let items of colors;let i = index;">
-            <div [appColorchecker]="toFindColors" [idOf]="i" [tabInput]="colors" [getOne]="items">
+            <div style="margin-left: 5px;border-radius: 15px;padding: 0px 5px;" [appColorchecker]="toFindColors" [idOf]="i" [tabInput]="colors" [getOne]="items">
                 
                 <div class="pastille" [ngStyle]="{'backgroundColor': items}">
-                    
+
                 </div>
             </div>
         </ng-container>   
