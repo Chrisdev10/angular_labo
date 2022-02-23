@@ -16,7 +16,6 @@ export class SamplerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data.returnData().pipe().subscribe( (x) => console.log(x)));
   }
   
 

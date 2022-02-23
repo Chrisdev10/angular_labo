@@ -7,8 +7,8 @@ import { SampleserviceService } from 'src/app/service/sampleservice.service';
   styleUrls: ['./formsettings.component.css']
 })
 export class FormsettingsComponent implements OnInit {
-  numberOfTry: number = 0;
-  numberOf: number = 0;
+  numberOfTry: number = 10;
+  numberOf: number = 4;
   numberOfPlayer: 'solo'| 'duo' = 'solo';
   player: number|any;
   constructor(

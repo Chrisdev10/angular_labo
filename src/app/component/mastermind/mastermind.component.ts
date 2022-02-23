@@ -28,10 +28,9 @@ export class MastermindComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    
     this.data.returnParam().subscribe(x =>{
-      this.testTab.push(x),
-      console.log(x);
-      ;
+      this.testTab.push(x)
     })
     this.numberOf = this.testTab[0];
     this.numberOfTry = this.testTab[1];
@@ -47,7 +46,7 @@ export class MastermindComponent implements OnInit {
   initColors(){
     if(this.player == 'solo'){
       for(let i = 0; i < this.numberOf;i++){
-        this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.numberOf)]);
+        this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.colorsTab.length)]);
       }
     }else{
       this.colorToFind = ["red","red","red","red",]
