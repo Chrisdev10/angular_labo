@@ -27,7 +27,6 @@ export class ColorPickerComponent implements OnInit {
   }
   getColor(colors: string){
     this.colorChoosed = colors; 
-    
   }
   
   resetColor(check:boolean){

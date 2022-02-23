@@ -1,7 +1,7 @@
 
 
 <div class="design">
-    
+    <app-sampler [color]="winInputs" [numberLeft]="numberOfTry"></app-sampler>
     <app-color-picker (sample)="getNextSample($event)" [numberOf]="numberOf" [colorTab]="colorsTab"></app-color-picker>
-    <app-history [toFindColors]="colorToFind" [getSample]="next" ></app-history>
+    <app-history (win)="showWin($event)" [toFindColors]="colorToFind" [getSample]="next" ></app-history>
 </div>

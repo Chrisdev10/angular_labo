@@ -19,7 +19,6 @@ export class SamplerFillerDirective implements OnInit {
   ngOnInit(): void {
   }
   @HostListener('click') clickcheck(){
-    console.log(this.index + " "+ this.savedColors);
     this.savedColors
     
     if(this.sample){

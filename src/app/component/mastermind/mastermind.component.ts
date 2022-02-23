@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as _ from 'lodash';
+import { colorid } from 'src/models/colorid.model';
 
 @Component({
   selector: 'app-mastermind',
@@ -14,7 +16,10 @@ export class MastermindComponent implements OnInit {
   colorToFind: string[]= []
   next: Array<string[]> = []
   player: number|any;
-  constructor() {}
+  winInputs: colorid[] = [];
+  constructor(
+    private route:Router
+  ) {}
 
   ngOnInit(): void {
     this.player = history.state;
@@ -51,6 +56,20 @@ export class MastermindComponent implements OnInit {
     const newTry: string[]= [];
     tab.forEach( (x)=> newTry.push(x));
     this.next.push(newTry)
+    if(_.isEqual(newTry,this.colorToFind)){
+      alert("win");
+      this.ngOnInit();  
+    }else{
+      this.numberOfTry--;
+    }
+    if(this.numberOfTry==0){
+      alert("lose");
+    }
+    
+  }
+  showWin(color: colorid){
+  
+    this.winInputs[0] = color;
     
   }
 

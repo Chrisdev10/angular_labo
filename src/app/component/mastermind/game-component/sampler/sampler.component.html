@@ -1,3 +1,9 @@
 <div class="container">
-    test
+   Chances restantes :  {{ numberLeft }}
+</div>
+<div >
+    Trouver : 
+    <div *ngFor="let colors of colored" class="pastille" [ngStyle]="{'backgroundColor': colors}">
+    
+    </div>
 </div>

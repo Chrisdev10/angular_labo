@@ -1,5 +1,7 @@
 import { Directive, ElementRef, HostListener, Input, OnInit, Output } from '@angular/core';
 import * as _ from 'lodash';
+import { EventEmitter } from '@angular/core';
+import { colorid } from 'src/models/colorid.model';
 @Directive({
   selector: '[appColorchecker]'
 })
@@ -9,7 +11,7 @@ export class ColorcheckerDirective implements OnInit {
   @Input() getOne:string | any;
   @Input() idOf:number | any;
 
-
+  @Output() winvalue: EventEmitter<colorid> = new EventEmitter();
   constructor(
     private elem : ElementRef
   ) { }
@@ -20,6 +22,12 @@ export class ColorcheckerDirective implements OnInit {
       
       if(this.getOne == this.tabToFind[this.idOf]){        
         this.elem.nativeElement.style.backgroundColor = 'lightgreen';
+        const colorid: colorid = {
+          id : this.idOf,
+          color: this.getOne
+        };
+        this.winvalue.emit(colorid);
+        
       }else{
         if(_.includes(this.tabToFind, this.getOne)){
           for(let i = 0; i < this.tabToFind.length ; i++){
