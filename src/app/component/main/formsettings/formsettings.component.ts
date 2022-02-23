@@ -11,6 +11,7 @@ export class FormsettingsComponent implements OnInit {
   numberOf: number = 4;
   numberOfPlayer: 'solo'| 'duo' = 'solo';
   player: number|any;
+  checker: boolean = false;
   constructor(
     private data: SampleserviceService
   ) { }
@@ -25,5 +26,8 @@ export class FormsettingsComponent implements OnInit {
 
   onSubmit(){
     this.data.setAll(this.numberOf,this.numberOfTry,this.numberOfPlayer);
+  }
+  switchcheck(){
+    this.checker = !this.checker;
   }
 }

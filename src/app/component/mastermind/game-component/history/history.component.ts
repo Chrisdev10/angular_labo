@@ -21,8 +21,6 @@ export class HistoryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   console.log(this.getSample);
-   
   
   }
   winvalue(win: colorid){

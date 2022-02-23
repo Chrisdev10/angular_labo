@@ -7,14 +7,14 @@
         <option value="15">15</option>
     </select>
     <label for="nbr" class="form-label">Nombre couleur :</label>
-    <select class="form-select" name="nbr" id="nbr" [(ngModel)]="numberOf">
+    <select class="form-select mb-4" name="nbr" id="nbr" [(ngModel)]="numberOf">
         <option value="4">4</option>
         <option value="5">5</option>
         <option value="6">6</option>
     </select>
     <div class="d-flex">
-    <button class="btn btn-dark" type="submit">Set</button>
-    <button class="btn btn-dark" type="submit" [routerLink]="'/mastermind'" >Play</button>
+    <button [disabled]="checker" (click)="switchcheck()" class="btn btn-dark" type="submit">Set</button>
+    <button [disabled]="!checker" class="btn btn-dark" type="submit" [routerLink]="'/mastermind'" >Play</button>
     </div>  
 </form>
 </div>
