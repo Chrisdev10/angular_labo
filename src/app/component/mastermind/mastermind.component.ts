@@ -24,7 +24,6 @@ export class MastermindComponent implements OnInit {
   ngOnInit(): void {
     
     this.player = history.state;
-    console.log(this.player);
     this.initLvl();
     this.initColors();
     for(let i = 0; i < this.numberOf ; i++){
@@ -50,8 +49,12 @@ export class MastermindComponent implements OnInit {
   }
 
   initColors(){
-    for(let i = 0; i < this.numberOf;i++){
-      this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.numberOf)]);
+    if(this.player.p == 1){
+      for(let i = 0; i < this.numberOf;i++){
+        this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.numberOf)]);
+      }
+    }else{
+      this.colorToFind = ["red","red","red","red",]
     }
     console.log(this.colorToFind);
   }
