@@ -12,6 +12,7 @@ import { ColorcheckerDirective } from './component/mastermind/game-component/his
 import { MainComponent } from './component/main/main.component';
 import { AcceuilComponent } from './component/main/acceuil/acceuil.component';
 import { FormsModule } from '@angular/forms';
+import { FormsettingsComponent } from './component/main/formsettings/formsettings.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     SamplerFillerDirective,
     ColorcheckerDirective,
     MainComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    FormsettingsComponent
   ],
   imports: [
     BrowserModule,

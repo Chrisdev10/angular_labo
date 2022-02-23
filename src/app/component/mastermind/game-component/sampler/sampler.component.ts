@@ -13,7 +13,7 @@ export class SamplerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-   interval(500).subscribe(()=>this.ngOnInit())
+
   }
   
 

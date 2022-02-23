@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as _ from 'lodash';
 import { colorid } from 'src/models/colorid.model';
+import { SamplerComponent } from './game-component/sampler/sampler.component';
 
 @Component({
   selector: 'app-mastermind',
