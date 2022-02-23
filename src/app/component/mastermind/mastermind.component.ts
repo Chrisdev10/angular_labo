@@ -77,10 +77,5 @@ export class MastermindComponent implements OnInit {
     this.winInputs[color.id] = color.color;
     
   }
-  finished(){
-    return this.finish;
-  }
-
- 
 
 }

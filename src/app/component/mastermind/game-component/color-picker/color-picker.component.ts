@@ -9,6 +9,7 @@ import { SampleserviceService } from 'src/app/service/sampleservice.service';
 })
 export class ColorPickerComponent implements OnInit {
   @Input() colorTab?: string[];
+  @Input() isFinish: boolean = false;
   numberOf: number = 0;
 
   @Output() sample: EventEmitter<string[]> = new EventEmitter();
