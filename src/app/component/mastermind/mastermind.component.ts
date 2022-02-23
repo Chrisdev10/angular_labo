@@ -16,17 +16,21 @@ export class MastermindComponent implements OnInit {
   colorToFind: string[]= []
   next: Array<string[]> = []
   player: number|any;
-  winInputs: colorid[] = [];
+  winInputs: string[] = [];
   constructor(
     private route:Router
   ) {}
 
   ngOnInit(): void {
+    
     this.player = history.state;
     console.log(this.player);
     this.initLvl();
     this.initColors();
-
+    for(let i = 0; i < this.numberOf ; i++){
+      this.winInputs[i] = "antiquewhite"
+      
+    }
   }
 
   initLvl(){
@@ -69,7 +73,7 @@ export class MastermindComponent implements OnInit {
   }
   showWin(color: colorid){
   
-    this.winInputs[0] = color;
+    this.winInputs[color.id] = color.color;
     
   }
 

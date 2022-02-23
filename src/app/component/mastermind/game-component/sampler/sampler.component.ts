@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 import { colorid } from 'src/models/colorid.model';
 
 @Component({
@@ -8,18 +9,11 @@ import { colorid } from 'src/models/colorid.model';
 })
 export class SamplerComponent implements OnInit {
   @Input() numberLeft:number = 0;
-  @Input() color: colorid[] | any;
-  colored: string[] = ["antiquewhite","antiquewhite","antiquewhite","antiquewhite"];
+  @Input() colored?: string[];
   constructor() { }
 
   ngOnInit(): void {
-    if(this.color[0]){
-    this.colored[this.color[0].id] = this.color[0].color;
-    
-    }
-    console.log(this.colored);
-    
-    
+   interval(500).subscribe(()=>this.ngOnInit())
   }
   
 
