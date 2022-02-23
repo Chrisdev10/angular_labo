@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { SampleserviceService } from 'src/app/service/sampleservice.service';
 
 @Component({
   selector: 'app-color-picker',
@@ -8,7 +9,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class ColorPickerComponent implements OnInit {
   @Input() colorTab?: string[];
-  @Input() numberOf?: number;
+  numberOf: number = 0;
 
   @Output() sample: EventEmitter<string[]> = new EventEmitter();
 
@@ -18,12 +19,24 @@ export class ColorPickerComponent implements OnInit {
   colorChoosed: string|any;
   colorTabChoosed?: string[];
 
-  constructor() { }
+  constructor(
+    private data: SampleserviceService
+  ) {
+    
+   }
 
   ngOnInit(): void {
-    this.tabSize = Array(this.numberOf).fill("antiquewhite").map((x,i)=> x);
-    this.colorPickedBuffer = Array(this.numberOf).fill("antiquewhite").map((x,i)=> x);
     
+    this.numberOf = this.data.returnNumberOf();
+    this.initTab(this.numberOf);
+    
+  }
+  initTab(numb: number){
+    this.tabSize = Array(4).fill("antiquewhite").map((x,i)=> x);
+    console.log(this.tabSize);
+    
+    this.colorPickedBuffer = Array(4).fill("antiquewhite").map((x,i)=> x);
+    console.log(this.colorPickedBuffer);
   }
   getColor(colors: string){
     this.colorChoosed = colors; 

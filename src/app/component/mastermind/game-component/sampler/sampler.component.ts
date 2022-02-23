@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
+import { SampleserviceService } from 'src/app/service/sampleservice.service';
 import { colorid } from 'src/models/colorid.model';
 
 @Component({
@@ -10,10 +11,12 @@ import { colorid } from 'src/models/colorid.model';
 export class SamplerComponent implements OnInit {
   @Input() numberLeft:number = 0;
   @Input() colored?: string[];
-  constructor() { }
+  constructor(
+    private data : SampleserviceService
+  ) { }
 
   ngOnInit(): void {
-
+    console.log(this.data.returnData().pipe().subscribe( (x) => console.log(x)));
   }
   
 

@@ -1,3 +1,18 @@
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-    
+<div class="main">
+<form class="form" (ngSubmit)="onSubmit()">
+    <label for="try" class="form-label">Nombre essai :</label>
+    <select class="form-select" name="try" id="try" [(ngModel)]="numberOfTry">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+    </select>
+    <label for="nbr" class="form-label">Nombre couleur :</label>
+    <select class="form-select" name="nbr" id="nbr" [(ngModel)]="numberOf">
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+    <button type="submit">Set</button>
+    <button type="submit" [routerLink]="'/mastermind'" >Play</button>
 </form>
+</div>

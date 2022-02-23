@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container p-4 pickk">
     <div class="row custom">
         <ng-container class="col" *ngFor="let colors of tabSize;let i = index">
             <div [appSamplerFiller]="colorChoosed" [index]="i" (removeBuffer)="resetColor($event)" (getNewColors)="saveChange($event, i)" class="pastille"></div>

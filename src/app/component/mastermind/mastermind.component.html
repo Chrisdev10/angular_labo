@@ -2,6 +2,9 @@
 
 <div class="design">
     <app-sampler #sample [colored]="winInputs" [numberLeft]="numberOfTry"></app-sampler>
-    <app-color-picker (sample)="getNextSample($event)" [numberOf]="numberOf" [colorTab]="colorsTab"></app-color-picker>
+    <app-color-picker (sample)="getNextSample($event)" [colorTab]="colorsTab"></app-color-picker>
     <app-history (win)="showWin($event)" [toFindColors]="colorToFind" [getSample]="next" ></app-history>
+    <ng-template *ngIf="finished">
+        <button class="btn btn-dark" [routerLink]="'/mastermind'">Restart</button>
+    </ng-template>
 </div>

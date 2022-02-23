@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { Observable, of, reduce } from 'rxjs';
 import { colorid } from 'src/models/colorid.model';
 import { EventEmitter } from '@angular/core';
+import { SampleserviceService } from 'src/app/service/sampleservice.service';
 
 @Component({
   selector: 'app-history',
@@ -15,7 +16,9 @@ export class HistoryComponent implements OnInit {
   @Input() toFindColors: string[] = [];
   @Output() win: EventEmitter<colorid> = new EventEmitter();
   
-  constructor() { }
+  constructor(
+    private data: SampleserviceService
+  ) { }
 
   ngOnInit(): void {
    

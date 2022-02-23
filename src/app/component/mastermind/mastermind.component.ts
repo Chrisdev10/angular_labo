@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as _ from 'lodash';
+import { SampleserviceService } from 'src/app/service/sampleservice.service';
 import { colorid } from 'src/models/colorid.model';
 import { SamplerComponent } from './game-component/sampler/sampler.component';
 
@@ -16,16 +17,26 @@ export class MastermindComponent implements OnInit {
   colorsTab: string[] = ["red","blue","yellow","green","black","white"];
   colorToFind: string[]= []
   next: Array<string[]> = []
-  player: number|any;
+  player: 'solo'|'duo' = 'solo';
   winInputs: string[] = [];
+  finish: boolean = false;
+
+  testTab: any[] = [];
   constructor(
-    private route:Router
+    private route:Router,
+    private data: SampleserviceService
   ) {}
 
   ngOnInit(): void {
+    this.data.returnParam().subscribe(x =>{
+      this.testTab.push(x),
+      console.log(x);
+      ;
+    })
+    this.numberOf = this.testTab[0];
+    this.numberOfTry = this.testTab[1];
+    this.player = this.testTab[2];
     
-    this.player = history.state;
-    this.initLvl();
     this.initColors();
     for(let i = 0; i < this.numberOf ; i++){
       this.winInputs[i] = "antiquewhite"
@@ -33,24 +44,8 @@ export class MastermindComponent implements OnInit {
     }
   }
 
-  initLvl(){
-    switch(this.player.lvl){
-      case 'easy': 
-        this.numberOf = 4
-        break;
-      case 'medium': 
-        this.numberOf = 5
-        break;
-      case 'hard': 
-        this.numberOf = 6
-        break;
-      default: this.numberOf = 4;
-
-    }
-  }
-
   initColors(){
-    if(this.player.p == 1){
+    if(this.player == 'solo'){
       for(let i = 0; i < this.numberOf;i++){
         this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.numberOf)]);
       }
@@ -66,19 +61,24 @@ export class MastermindComponent implements OnInit {
     this.next.push(newTry)
     if(_.isEqual(newTry,this.colorToFind)){
       alert("win");
-      this.ngOnInit();  
+      this.finish = true;
     }else{
       this.numberOfTry--;
     }
     if(this.numberOfTry==0){
       alert("lose");
+      this.finish = true;
     }
+
     
   }
   showWin(color: colorid){
   
     this.winInputs[color.id] = color.color;
     
+  }
+  finished(){
+    return this.finish;
   }
 
  
