@@ -74,6 +74,7 @@ export class MastermindComponent implements OnInit {
   showWin(color: colorid){
   
     this.winInputs[color.id] = color.color;
+    this.data.updateArray(color);
     
   }
 

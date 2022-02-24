@@ -3,8 +3,8 @@
     width: auto;
     display: flex;
     flex-direction: column;
-    margin: 0px auto;
-    
+    justify-content: center;
+    align-items: center;
     
 }
 .pastille{
@@ -12,8 +12,6 @@
     height: 40px;
     border: 1px solid black;
     border-radius: 50%;
-    display: inline-block;
-    margin-top: 12px;
 }
 .wrapper{
     width: 70px;
@@ -21,6 +19,7 @@
     display: flex;
     margin-top: 40px;
     border-radius: 10px;
+    align-items: center;
 }
 .red{
     background-color: lightcoral;
@@ -37,6 +36,6 @@
         margin-top: 20px;
     }
     .history{
-        align-items: flex-start;
+        align-items: center;
     }
 }

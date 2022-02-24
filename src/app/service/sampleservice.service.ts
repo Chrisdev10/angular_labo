@@ -10,6 +10,7 @@ export class SampleserviceService {
   numberOfTry?: number;
   numberOfPlayer?: 'solo' | 'duo';
   arrayColor: string[] = ["red","blue","yellow","green","black","white"];
+  arraySample: string[] = ["antiquewhite","antiquewhite","antiquewhite","antiquewhite"]
   constructor() { }
   setAll(numberOf:number, numberOfTry: number, numberOfPlayer: 'solo'|'duo'){
     this.numberOf = numberOf;
@@ -29,4 +30,14 @@ export class SampleserviceService {
     return of(this.arrayColor);
   }
   
+
+  /// Sample Array Update 
+  
+  updateArray(color: colorid){
+    this.arraySample[color.id] = color.color;
+  }
+
+  getArraySample(): string []{
+    return this.arraySample;
+  }
 }
