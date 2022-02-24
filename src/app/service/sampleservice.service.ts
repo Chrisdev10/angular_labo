@@ -6,7 +6,7 @@ import { colorid } from 'src/models/colorid.model';
   providedIn: 'root'
 })
 export class SampleserviceService {
-  numberOf: number | any;
+  numberOf?: number | any;
   numberOfTry?: number;
   numberOfPlayer?: 'solo' | 'duo';
   arrayColor: string[] = ["red","blue","yellow","green","black","white"];

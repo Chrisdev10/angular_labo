@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as _ from 'lodash';
+import { forEach } from 'lodash';
 import { SampleserviceService } from 'src/app/service/sampleservice.service';
 import { colorid } from 'src/models/colorid.model';
 import { SamplerComponent } from './game-component/sampler/sampler.component';
@@ -11,8 +12,7 @@ import { SamplerComponent } from './game-component/sampler/sampler.component';
   styleUrls: ['./mastermind.component.css']
 })
 export class MastermindComponent implements OnInit {
-  numberOf: number = 0;
-  valueRoute?: { [k: string]: any; };
+  numberOf: number = 4;
   numberOfTry: number = 10;
   colorsTab: string[] = ["red","blue","yellow","green","black","white"];
   colorToFind: string[]= []
@@ -32,15 +32,14 @@ export class MastermindComponent implements OnInit {
     this.data.returnParam().subscribe(x =>{
       this.testTab.push(x)
     })
-    this.numberOf = this.testTab[0];
+    this.colorsTab = this.colorsTab.slice(0,this.testTab[0]);
     this.numberOfTry = this.testTab[1];
     this.player = this.testTab[2];
-    
+    this.winInputs = this.data.getArraySample();
     this.initColors();
-    for(let i = 0; i < this.numberOf ; i++){
-      this.winInputs[i] = "antiquewhite"
-      
-    }
+    console.log(this.colorToFind);
+    
+  
   }
 
   initColors(){
@@ -49,32 +48,38 @@ export class MastermindComponent implements OnInit {
         this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.colorsTab.length)]);
       }
     }else{
-      this.colorToFind = ["red","red","red","red",]
+      alert("p2 set colors")
     }
-    console.log(this.colorToFind);
   }
 
   getNextSample(tab: string[]){
-    const newTry: string[]= [];
-    tab.forEach( (x)=> newTry.push(x));
-    this.next.push(newTry)
-    if(_.isEqual(newTry,this.colorToFind)){
-      alert("win");
-      this.finish = true;
+    if(this.player === 'duo' && this.colorToFind.length == 0){
+      this.colorToFind = tab;
     }else{
-      this.numberOfTry--;
-    }
-    if(this.numberOfTry==0){
-      alert("lose");
-      this.finish = true;
-    }
+      const newTry: string[]= [];
+      tab.forEach( (x)=> newTry.push(x));
+      this.next.push(newTry)
+      if(_.isEqual(newTry,this.colorToFind)){
+        alert("win");
+        this.finish = true;
+      }else{
+        this.numberOfTry--;
+      }
+      if(this.numberOfTry==0){
+        alert("lose");
+        this.finish = true;
+      }
 
+    }
     
   }
   showWin(color: colorid){
-  
     this.winInputs[color.id] = color.color;
     this.data.updateArray(color);
+    
+  }
+  changer(values: string[]){
+    console.log("done  "+values);
     
   }
 

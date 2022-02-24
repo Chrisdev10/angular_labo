@@ -31,27 +31,17 @@ export class ColorPickerComponent implements OnInit {
     this.numberOf = this.data.returnNumberOf();
     if(this.numberOf !== 0){
     this.initTab(this.numberOf);
-    // for(let i = 0; i < this.numberOf ; i++){
-    //   console.log("i");
-      
-    // }
+        console.log("here");
+        
     }
     
   }
   initTab(numb: number){
-    if(numb == 6){
-      this.tabSize = Array(6).fill("antiquewhite").map((x,i)=> x);
     
-      this.colorPickedBuffer = Array(6).fill("antiquewhite").map((x,i)=> x);
-    }else if(numb == 5){
-      this.tabSize = Array(5).fill("antiquewhite").map((x,i)=> x);
-    
-      this.colorPickedBuffer = Array(5).fill("antiquewhite").map((x,i)=> x);
-    }else{
-      this.tabSize = Array(4).fill("antiquewhite").map((x,i)=> x);
-    
-      this.colorPickedBuffer = Array(4).fill("antiquewhite").map((x,i)=> x);
-    }
+    this.tabSize = Array(4).fill("antiquewhite").map((x,i)=> x);
+  
+    this.colorPickedBuffer = Array(4).fill("antiquewhite").map((x,i)=> x);
+  
     
   }
   getColor(colors: string){

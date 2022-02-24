@@ -12,9 +12,12 @@
         <option value="5">5</option>
         <option value="6">6</option>
     </select>
+    <select class="form-select mb-4" name="nbr" id="nbr" [(ngModel)]="numberOfPlayer">
+        <option value="solo">Solo</option>
+        <option value="duo">Duo</option>
+    </select>
     <div class="d-flex">
-    <button [disabled]="checker" (click)="switchcheck()" class="btn btn-dark" type="submit">Set</button>
-    <button [disabled]="!checker" class="btn btn-dark" type="submit" [routerLink]="'/mastermind'" >Play</button>
+    <button class="btn btn-dark" type="submit" >Play</button>
     </div>  
 </form>
 </div>

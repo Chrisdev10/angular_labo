@@ -2,7 +2,7 @@
     <div class="row custom">
         
         <ng-container class="col" *ngFor="let colors of tabSize;let i = index">
-            <div [appSamplerFiller]="colorChoosed" [index]="i" (removeBuffer)="resetColor($event)" (getNewColors)="saveChange($event, i)" class="pastille"></div>
+            <div [appSamplerFiller]="colorChoosed" [index]="i" (removeBuffer)="resetColor($event)" [colorTab]="tabSize" (getNewColors)="saveChange($event, i)" class="pastille"></div>
         </ng-container>
     </div>
     <div class="row custom pick">
@@ -15,6 +15,7 @@
     </div>
     <div class="row g-2 justify-content-center">
     <button [disabled]="isFinish" class="btn btn-light" (click)="sendSample()" >Valider</button>
+    <button class="btn btn-light" (click)="resetAll()" >reset</button>
     <button *ngIf="isFinish" class="btn btn-dark" routerLink="/" >restart</button>
 
     <!-- <button class="btn btn-light" (click)="resetAll()" >Reset</button> -->

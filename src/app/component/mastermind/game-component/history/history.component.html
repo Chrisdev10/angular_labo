@@ -1,10 +1,9 @@
 
 <div  class="history text-center">
-    last played
     <ng-container *ngFor="let colors of getSample">
         <div class="wrapper">
         <ng-container *ngFor="let items of colors;let i = index;">
-            <div style="margin-left: 5px;border-radius: 15px;padding: 0px 5px;" [appColorchecker]="toFindColors" (winvalue)="winvalue($event)" [idOf]="i" [tabInput]="colors" [getOne]="items">
+            <div [appColorchecker]="toFindColors" (winvalue)="winvalue($event)" [idOf]="i" [tabInput]="colors" [getOne]="items">
                 
                 <div class="pastille" [ngStyle]="{'backgroundColor': items}">
 

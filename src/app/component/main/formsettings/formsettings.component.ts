@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SampleserviceService } from 'src/app/service/sampleservice.service';
 
 @Component({
@@ -11,23 +12,19 @@ export class FormsettingsComponent implements OnInit {
   numberOf: number = 4;
   numberOfPlayer: 'solo'| 'duo' = 'solo';
   player: number|any;
-  checker: boolean = false;
+
   constructor(
-    private data: SampleserviceService
+    private data: SampleserviceService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     
-    this.player = history.state;
-    if(this.player.p == 2){
-      this.numberOfPlayer = 'duo';
-    }
   }
 
   onSubmit(){
     this.data.setAll(this.numberOf,this.numberOfTry,this.numberOfPlayer);
+    this.router.navigate(['/mastermind']);
   }
-  switchcheck(){
-    this.checker = !this.checker;
-  }
+  
 }
