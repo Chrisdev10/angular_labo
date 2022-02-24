@@ -2,11 +2,11 @@
     <div class="row custom">
         
         <ng-container class="col" *ngFor="let colors of tabSize;let i = index">
-            <div [appSamplerFiller]="colorChoosed" [index]="i" (removeBuffer)="resetColor($event)" [colorTab]="tabSize" (getNewColors)="saveChange($event, i)" class="pastille"></div>
+            <div class="pastille m-2" [ngStyle]="{'backgroundColor': tabSize[i]}"></div>
         </ng-container>
     </div>
     <div class="row custom pick">
-        <h2>Pick a colors</h2>
+        <h2> Pick a colors : {{tryLeft}} try left</h2>
         <ng-container *ngIf="colorTab">
             <ng-container class="col" *ngFor="let colors of colorTab">
                 <div (click)="getColor(colors)" class="pastille m-2" [ngStyle]="{'backgroundColor': colors}"></div>

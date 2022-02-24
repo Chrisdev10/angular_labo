@@ -7,7 +7,6 @@ import { MastermindComponent } from './component/mastermind/mastermind.component
 import { ColorPickerComponent } from './component/mastermind/game-component/color-picker/color-picker.component';
 import { SamplerComponent } from './component/mastermind/game-component/sampler/sampler.component';
 import { HistoryComponent } from './component/mastermind/game-component/history/history.component';
-import { SamplerFillerDirective } from './component/mastermind/game-component/color-picker/sampler-filler.directive';
 import { ColorcheckerDirective } from './component/mastermind/game-component/history/colorchecker.directive';
 import { MainComponent } from './component/main/main.component';
 import { AcceuilComponent } from './component/main/acceuil/acceuil.component';
@@ -21,7 +20,6 @@ import { FormsettingsComponent } from './component/main/formsettings/formsetting
     ColorPickerComponent,
     SamplerComponent,
     HistoryComponent,
-    SamplerFillerDirective,
     ColorcheckerDirective,
     MainComponent,
     AcceuilComponent,

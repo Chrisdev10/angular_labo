@@ -37,7 +37,6 @@ export class MastermindComponent implements OnInit {
     this.player = this.testTab[2];
     this.winInputs = this.data.getArraySample();
     this.initColors();
-    console.log(this.colorToFind);
     
   
   }
@@ -78,9 +77,6 @@ export class MastermindComponent implements OnInit {
     this.data.updateArray(color);
     
   }
-  changer(values: string[]){
-    console.log("done  "+values);
-    
-  }
+  
 
 }

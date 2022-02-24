@@ -26,6 +26,9 @@ export class SampleserviceService {
     return this.numberOf;
   }
 
+  returnMode(){
+    return this.numberOfPlayer;
+  }
   returnData():Observable<string[]>{
     return of(this.arrayColor);
   }
