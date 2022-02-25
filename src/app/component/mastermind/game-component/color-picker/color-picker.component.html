@@ -6,7 +6,7 @@
         </ng-container>
     </div>
     <div class="row custom pick">
-        <h2> Pick a colors : {{tryLeft}} try left</h2>
+        <h2> Pick a color : {{tryLeft}} try left</h2>
         <ng-container *ngIf="colorTab">
             <ng-container class="col" *ngFor="let colors of colorTab">
                 <div (click)="getColor(colors)" class="pastille m-2" [ngStyle]="{'backgroundColor': colors}"></div>

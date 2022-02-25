@@ -11,11 +11,17 @@ export class SampleserviceService {
   numberOfPlayer?: 'solo' | 'duo';
   arrayColor: string[] = ["red","blue","yellow","green","black","white"];
   arraySample: string[] = ["antiquewhite","antiquewhite","antiquewhite","antiquewhite"]
+  passedBy: boolean = false;
   constructor() { }
   setAll(numberOf:number, numberOfTry: number, numberOfPlayer: 'solo'|'duo'){
     this.numberOf = numberOf;
     this.numberOfTry = numberOfTry;
-    this.numberOfPlayer = numberOfPlayer;    
+    this.numberOfPlayer = numberOfPlayer; 
+    this.passedBy = true;   
+  }
+
+  checkStart(): boolean{
+    return this.passedBy;
   }
 
   returnParam():Observable<any>{

@@ -37,7 +37,6 @@ export class MastermindComponent implements OnInit {
     this.player = this.testTab[2];
     this.winInputs = this.data.getArraySample();
     this.initColors();
-    
   
   }
 
