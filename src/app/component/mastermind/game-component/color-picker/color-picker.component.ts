@@ -1,5 +1,6 @@
 import { AbstractType, Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import * as _ from 'lodash';
 import { SampleserviceService } from 'src/app/service/sampleservice.service';
 
 @Component({
@@ -42,6 +43,7 @@ export class ColorPickerComponent implements OnInit {
         break;
       }
     }
+    this.secureCheck();
   }
 
   resetAll(){
@@ -52,6 +54,13 @@ export class ColorPickerComponent implements OnInit {
   sendSample(){
     this.sample.emit(this.tabSize);
     this.resetAll();
-    }
+  }
+
+  secureCheck(): boolean{
+    return _.some(this.tabSize, (x)=>{ return x === 'antiquewhite'});
+  }
+  secureCheckReset(): boolean{
+    return _.some(this.tabSize, (x)=>{ return x !== 'antiquewhite'});
+  }
 
 }

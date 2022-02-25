@@ -14,8 +14,8 @@
         </ng-container>
     </div>
     <div class="row g-2 justify-content-center">
-    <button [disabled]="isFinish" class="btn btn-light" (click)="sendSample()" >Valider</button>
-    <button class="btn btn-light" (click)="resetAll()" >reset</button>
+    <button [disabled]="secureCheck()" class="btn btn-light" (click)="sendSample()" >Valider</button>
+    <button [disabled]="!secureCheckReset()" class="btn btn-light" (click)="resetAll()" >reset</button>
     <button *ngIf="isFinish" class="btn btn-dark" routerLink="/" >restart</button>
 
     <!-- <button class="btn btn-light" (click)="resetAll()" >Reset</button> -->
