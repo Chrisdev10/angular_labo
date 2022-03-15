@@ -23,10 +23,19 @@
 }
 .pickk{
     border-left: 2px solid rgb(149, 46, 133);
+    width: 100%;
 }
 
 @media (max-width: 550px){
     .pickk{
         border-left: 0px;
     }
+}
+form{
+    display: flex;
+    flex-direction: column;
+
+}
+form > button{
+    flex-grow: 1;
 }

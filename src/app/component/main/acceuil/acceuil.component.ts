@@ -17,7 +17,9 @@ export class AcceuilComponent implements OnInit {
   starter(){
     this.router.navigate(['/settings']);
   }
-
+  stat(){
+    this.router.navigate(['/statistique'])
+  }
   
 
 }

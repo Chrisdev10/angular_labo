@@ -1,0 +1,24 @@
+.containerr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin:10px auto;
+    height: auto;
+    background-color: transparent;
+    
+}
+
+.child{
+    border: 2px solid white;
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 50%;
+    height: auto;
+    text-align: center;
+    color: black;
+    
+}
+button{
+    flex-grow: 1;
+}

@@ -4,6 +4,7 @@ import { MasterGuardGuard } from './component/guard/master-guard.guard';
 import { AcceuilComponent } from './component/main/acceuil/acceuil.component';
 import { FormsettingsComponent } from './component/main/formsettings/formsettings.component';
 import { MainComponent } from './component/main/main.component';
+import { StatistiqueComponent } from './component/main/statistique/statistique.component';
 import { MastermindComponent } from './component/mastermind/mastermind.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path:'acceuil',component: AcceuilComponent},
   { path:'mastermind', component:MastermindComponent, canActivate: [MasterGuardGuard]},
   { path:'settings', component:FormsettingsComponent},
+  { path:"statistique", component: StatistiqueComponent },
   { path:'**', redirectTo:'acceuil'}
 ];
 

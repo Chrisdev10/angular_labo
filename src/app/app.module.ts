@@ -12,6 +12,8 @@ import { MainComponent } from './component/main/main.component';
 import { AcceuilComponent } from './component/main/acceuil/acceuil.component';
 import { FormsModule } from '@angular/forms';
 import { FormsettingsComponent } from './component/main/formsettings/formsettings.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StatistiqueComponent } from './component/main/statistique/statistique.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { FormsettingsComponent } from './component/main/formsettings/formsetting
     ColorcheckerDirective,
     MainComponent,
     AcceuilComponent,
-    FormsettingsComponent
+    FormsettingsComponent,
+    StatistiqueComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

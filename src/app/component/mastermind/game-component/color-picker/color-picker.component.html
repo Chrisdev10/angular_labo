@@ -1,4 +1,4 @@
-<div class="container p-4 pickk">
+<div class="p-1 pickk">
     <div class="row custom">
         
         <ng-container class="col" *ngFor="let colors of tabSize;let i = index">
@@ -6,7 +6,7 @@
         </ng-container>
     </div>
     <div class="row custom pick">
-        <h2> Pick a color : {{tryLeft}} try left</h2>
+        <h2> {{tryLeft}} try left</h2>
         <ng-container *ngIf="colorTab">
             <ng-container class="col" *ngFor="let colors of colorTab">
                 <div (click)="getColor(colors)" class="pastille m-2" [ngStyle]="{'backgroundColor': colors}"></div>
@@ -16,7 +16,18 @@
     <div class="row g-2 justify-content-center">
     <button [disabled]="secureCheck()" class="btn btn-light" (click)="sendSample()" >Valider</button>
     <button [disabled]="!secureCheckReset()" class="btn btn-light" (click)="resetAll()" >reset</button>
-    <button *ngIf="isFinish" class="btn btn-dark" routerLink="/" >restart</button>
+    <ng-container *ngIf="isFinish && winner">
+        <form (ngSubmit)="submitted()">
+            <label for="pse">pseudo</label>
+            <input [(ngModel)]="pseudo" type="text" name="pseudo" id="pse">
+            <button type="submit"  class="btn btn-dark text-center " >send</button>
+        </form>
+    </ng-container>
+
+    <ng-container *ngIf="isFinish && !winner" #lose>
+        <button class="btn btn-dark" routerLink="/" >restart</button>
+    </ng-container>
+    
 
     <!-- <button class="btn btn-light" (click)="resetAll()" >Reset</button> -->
     </div>
