@@ -37,11 +37,15 @@ export class ColorPickerComponent implements OnInit {
     this.gamemode = this.data.returnMode();
     this.initTab();
   }
+
+  // Set colors to default 
   initTab(){
     this.tabSize = Array(4).fill("antiquewhite");
     this.colorPickedBuffer = Array(4).fill("antiquewhite");
 
   }
+
+  // Change Colors with the one choosed
   getColor(colors: string){
     for(let i = 0; i < this.tabSize.length ; i++){
       if(this.tabSize[i] === 'antiquewhite'){
@@ -52,23 +56,29 @@ export class ColorPickerComponent implements OnInit {
     this.secureCheck();
   }
 
+  // Reset all Colors
   resetAll(){
     this.tabSize = ["antiquewhite","antiquewhite","antiquewhite","antiquewhite"];
     
   }
 
+  // Send sample of Colors 
   sendSample(){
     this.sample.emit(this.tabSize);
     this.resetAll();
   }
 
+  // Disable Valider Button if min 1 colors = default colors
   secureCheck(): boolean{
     return _.some(this.tabSize, (x)=>{ return x === 'antiquewhite'});
   }
+  
+  // Disable reset button if all colors = default colors (no entry)
   secureCheckReset(): boolean{
     return _.some(this.tabSize, (x)=>{ return x !== 'antiquewhite'});
   }
 
+  // Send Stat to service
   submitted(){
       const save: Stat = {
         id : 0,

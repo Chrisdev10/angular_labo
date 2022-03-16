@@ -1,6 +1,15 @@
 # Mastermind
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+### Simple `MASTERMIND` game build on Angular. 
+
+#### Game is accessible from [here](http://chrisdev10.github.io/angular_labo) 🔥
+
+##### ℹ️ Feel free to dl the whole project and run it local
+</br>
+
+
+![Main](src/assets/capture/game.png)
+
 
 ## Development server
 
