@@ -1,8 +1,9 @@
 
 
 <div class="design">
-    
-    <!-- <app-sampler (changer)="changer($event)" [numberLeft]="numberOfTry"></app-sampler> -->
+    <!--  Left side of App -->
     <app-color-picker [winner]="win" (sendData)="saveData($event)" [tryLeft]="numberOfTry" (sample)="getNextSample($event)" [tofind]="colorToFind" [colorTab]="colorsTab" [isFinish]="finish" ></app-color-picker>
+    
+    <!--  Right side of App -->
     <app-history (win)="showWin($event)" [toFindColors]="colorToFind" [getSample]="next" ></app-history>
 </div>

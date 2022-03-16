@@ -1,12 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as _ from 'lodash';
-import { forEach } from 'lodash';
 import { DataStatService } from 'src/app/service/data-stat.service';
 import { SampleserviceService } from 'src/app/service/sampleservice.service';
 import { colorid } from 'src/models/colorid.model';
 import { Stat } from 'src/models/gamestat.model';
-import { SamplerComponent } from './game-component/sampler/sampler.component';
 
 @Component({
   selector: 'app-mastermind',
@@ -14,18 +12,21 @@ import { SamplerComponent } from './game-component/sampler/sampler.component';
   styleUrls: ['./mastermind.component.css']
 })
 export class MastermindComponent implements OnInit {
-  numberOf: number = 4;
-  numberOfTry: number = 10;
-  TRYNBR: number = this.numberOfTry;
-  colorsTab: string[] = ["red","blue","yellow","green","black","white"];
-  colorToFind: string[]= []
-  next: Array<string[]> = []
+  
+  numberOfColors: number = 4;
+  numberOfTry: number = 0;
+  NB_CHANCE: number = this.numberOfTry;
   player: 'solo'|'duo' = 'solo';
-  winInputs: string[] = [];
   finish: boolean = false;
   win: boolean = false;
 
-  testTab: any[] = [];
+  // Tab Variables
+  winInputs: string[] = [];
+  colorsTab: string[] = ["red","blue","yellow","green","black","white"];
+  colorToFind: string[]= []
+  next: Array<string[]> = []
+  statTab: any[] = [];
+  
   constructor(
     private route:Router,
     private data: SampleserviceService,
@@ -33,24 +34,23 @@ export class MastermindComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-   
-    
-    
     this.data.returnParam().subscribe(x =>{
-      this.testTab.push(x)
+      this.statTab.push(x)
     })
-    this.colorsTab = this.colorsTab.slice(0,this.testTab[0]);
-    this.numberOfTry = this.testTab[1];
-    this.player = this.testTab[2];
+    this.colorsTab = this.colorsTab.slice(0,this.statTab[0]);
+    this.numberOfTry = this.statTab[1];
+    this.player = this.statTab[2];
     this.winInputs = this.data.getArraySample();
     this.initColors();
   
   }
+
+  // Save all stats in Service
   saveData( stat: Stat){
     const finalStat: Stat = {
       id: stat.id,
       player: stat.player,
-      nb_tentative: this.TRYNBR,
+      nb_tentative: this.NB_CHANCE,
       nb_restante: this.numberOfTry,
       nb_color: this.colorsTab.length,
       hasWin: this.win
@@ -59,9 +59,10 @@ export class MastermindComponent implements OnInit {
     
   }
 
+  // Set colors to find 
   initColors(){
     if(this.player == 'solo'){
-      for(let i = 0; i < this.numberOf;i++){
+      for(let i = 0; i < this.numberOfColors;i++){
         this.colorToFind.push(this.colorsTab[Math.floor(Math.random()*this.colorsTab.length)]);
       }
     }else{
@@ -69,6 +70,11 @@ export class MastermindComponent implements OnInit {
     }
   }
 
+  /*
+    If player == duo, first round is p2 turn to set colors to find
+    Return win if newTry tab == ColortoFind
+    Else lose if Nbr of try = 0
+  */
   getNextSample(tab: string[]){
     if(this.player === 'duo' && this.colorToFind.length == 0){
       this.colorToFind = tab;
@@ -91,6 +97,7 @@ export class MastermindComponent implements OnInit {
     }
     
   }
+  //Show win colors
   showWin(color: colorid){
     this.winInputs[color.id] = color.color;
     this.data.updateArray(color);

@@ -14,9 +14,15 @@ export class AcceuilComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  // Route to Settings 
+
   starter(){
     this.router.navigate(['/settings']);
   }
+
+  // Route to stat ( Not available in Deploy version )
+
   stat(){
     this.router.navigate(['/statistique'])
   }

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MastermindComponent } from './component/mastermind/mastermind.component';
 import { ColorPickerComponent } from './component/mastermind/game-component/color-picker/color-picker.component';
-import { SamplerComponent } from './component/mastermind/game-component/sampler/sampler.component';
 import { HistoryComponent } from './component/mastermind/game-component/history/history.component';
 import { ColorcheckerDirective } from './component/mastermind/game-component/history/colorchecker.directive';
 import { MainComponent } from './component/main/main.component';
@@ -20,7 +19,6 @@ import { StatistiqueComponent } from './component/main/statistique/statistique.c
     AppComponent,
     MastermindComponent,
     ColorPickerComponent,
-    SamplerComponent,
     HistoryComponent,
     ColorcheckerDirective,
     MainComponent,

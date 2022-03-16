@@ -13,11 +13,13 @@ export class StatistiqueComponent implements OnInit {
     private stat: DataStatService
   ) { }
 
+  //Get all Stat Data 
   ngOnInit(): void {
-    this.stat.getAll().subscribe(x => this.items = x);    
-    
-    
+    this.stat.getAll().subscribe(x => this.items = x);        
   }
+
+  //Delete selected Data Record
+  // @param: id of Stat obj
   deleteRecord(id: number){
     this.stat.deleteRecord(id).subscribe();
   }

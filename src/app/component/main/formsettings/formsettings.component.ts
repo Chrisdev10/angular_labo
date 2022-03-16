@@ -22,6 +22,10 @@ export class FormsettingsComponent implements OnInit {
     
   }
 
+
+  // @param: none
+  // Set Settings of Game through Service 
+  // Route to game
   onSubmit(){
     this.data.setAll(this.numberOf,this.numberOfTry,this.numberOfPlayer);
     this.router.navigate(['/mastermind']);
