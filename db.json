@@ -1,0 +1,148 @@
+{
+  "api": [
+    {
+      "id": 4,
+      "player": "Liana",
+      "nb_tentative": 5,
+      "nb_restante": 3,
+      "nb_color": 5,
+      "hasWin": false
+    },
+    {
+      "id": 6,
+      "player": "Amitie",
+      "nb_tentative": 7,
+      "nb_restante": 7,
+      "nb_color": 5,
+      "hasWin": false
+    },
+    {
+      "id": 8,
+      "player": "Genia",
+      "nb_tentative": 7,
+      "nb_restante": 5,
+      "nb_color": 5,
+      "hasWin": false
+    },
+    {
+      "id": 9,
+      "player": "Harris",
+      "nb_tentative": 7,
+      "nb_restante": 6,
+      "nb_color": 5,
+      "hasWin": true
+    },
+    {
+      "id": 10,
+      "player": "Phyllys",
+      "nb_tentative": 4,
+      "nb_restante": 5,
+      "nb_color": 4,
+      "hasWin": false
+    },
+    {
+      "id": 11,
+      "player": "Siward",
+      "nb_tentative": 6,
+      "nb_restante": 2,
+      "nb_color": 4,
+      "hasWin": false
+    },
+    {
+      "id": 12,
+      "player": "Katrina",
+      "nb_tentative": 4,
+      "nb_restante": 2,
+      "nb_color": 4,
+      "hasWin": false
+    },
+    {
+      "id": 13,
+      "player": "Kipper",
+      "nb_tentative": 5,
+      "nb_restante": 0,
+      "nb_color": 6,
+      "hasWin": false
+    },
+    {
+      "id": 14,
+      "player": "Angie",
+      "nb_tentative": 7,
+      "nb_restante": 5,
+      "nb_color": 5,
+      "hasWin": true
+    },
+    {
+      "id": 15,
+      "player": "Janeczka",
+      "nb_tentative": 4,
+      "nb_restante": 6,
+      "nb_color": 4,
+      "hasWin": false
+    },
+    {
+      "id": 16,
+      "player": "Amelia",
+      "nb_tentative": 4,
+      "nb_restante": 2,
+      "nb_color": 7,
+      "hasWin": false
+    },
+    {
+      "id": 17,
+      "player": "Laura",
+      "nb_tentative": 5,
+      "nb_restante": 4,
+      "nb_color": 6,
+      "hasWin": true
+    },
+    {
+      "id": 18,
+      "player": "Leonelle",
+      "nb_tentative": 4,
+      "nb_restante": 5,
+      "nb_color": 5,
+      "hasWin": false
+    },
+    {
+      "id": 19,
+      "player": "Barnaby",
+      "nb_tentative": 7,
+      "nb_restante": 7,
+      "nb_color": 6,
+      "hasWin": true
+    },
+    {
+      "id": 20,
+      "player": "chris",
+      "nb_tentative": 0,
+      "nb_restante": 9,
+      "nb_color": 4,
+      "hasWin": true
+    },
+    {
+      "id": 21,
+      "player": "chris",
+      "nb_tentative": "5",
+      "nb_restante": 3,
+      "nb_color": 4,
+      "hasWin": true
+    },
+    {
+      "id": 22,
+      "player": "chris",
+      "nb_tentative": 10,
+      "nb_restante": 7,
+      "nb_color": 4,
+      "hasWin": true
+    },
+    {
+      "id": 23,
+      "player": "test",
+      "nb_tentative": 10,
+      "nb_restante": 7,
+      "nb_color": 4,
+      "hasWin": true
+    }
+  ]
+}

@@ -15,7 +15,7 @@ export class MastermindComponent implements OnInit {
   
   numberOfColors: number = 4;
   numberOfTry: number = 0;
-  NB_CHANCE: number = this.numberOfTry;
+  NB_CHANCE: number = 0;
   player: 'solo'|'duo' = 'solo';
   finish: boolean = false;
   win: boolean = false;
@@ -40,8 +40,10 @@ export class MastermindComponent implements OnInit {
     this.colorsTab = this.colorsTab.slice(0,this.statTab[0]);
     this.numberOfTry = this.statTab[1];
     this.player = this.statTab[2];
+    this.NB_CHANCE = this.statTab[1];
     this.winInputs = this.data.getArraySample();
     this.initColors();
+    
   
   }
 

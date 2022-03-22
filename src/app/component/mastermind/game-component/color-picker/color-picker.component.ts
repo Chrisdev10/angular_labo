@@ -40,15 +40,15 @@ export class ColorPickerComponent implements OnInit {
 
   // Set colors to default 
   initTab(){
-    this.tabSize = Array(4).fill("antiquewhite");
-    this.colorPickedBuffer = Array(4).fill("antiquewhite");
+    this.tabSize = Array(4).fill("transparent");
+    this.colorPickedBuffer = Array(4).fill("transparent");
 
   }
 
   // Change Colors with the one choosed
   getColor(colors: string){
     for(let i = 0; i < this.tabSize.length ; i++){
-      if(this.tabSize[i] === 'antiquewhite'){
+      if(this.tabSize[i] === 'transparent'){
         this.tabSize[i] = colors;
         break;
       }
@@ -58,7 +58,7 @@ export class ColorPickerComponent implements OnInit {
 
   // Reset all Colors
   resetAll(){
-    this.tabSize = ["antiquewhite","antiquewhite","antiquewhite","antiquewhite"];
+    this.tabSize = ["transparent","transparent","transparent","transparent"];
     
   }
 
@@ -70,12 +70,12 @@ export class ColorPickerComponent implements OnInit {
 
   // Disable Valider Button if min 1 colors = default colors
   secureCheck(): boolean{
-    return _.some(this.tabSize, (x)=>{ return x === 'antiquewhite'});
+    return _.some(this.tabSize, (x)=>{ return x === 'transparent'});
   }
   
   // Disable reset button if all colors = default colors (no entry)
   secureCheckReset(): boolean{
-    return _.some(this.tabSize, (x)=>{ return x !== 'antiquewhite'});
+    return _.some(this.tabSize, (x)=>{ return x !== 'transparent'});
   }
 
   // Send Stat to service
@@ -88,7 +88,7 @@ export class ColorPickerComponent implements OnInit {
         nb_color: 4,
         hasWin: true
       }
-      // this.sendData.emit(save);
+      this.sendData.emit(save);
       this.router.navigate(['/']);
   }
 

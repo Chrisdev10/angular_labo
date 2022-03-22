@@ -1,11 +1,25 @@
+<button class="btn btn-light" routerLink="" >Back</button>
 <div class="containerr">
-    <div [ngStyle]="{'backgroundColor' : item.hasWin ? 'lightgreen' : 'tomato'}"  *ngFor="let item of items" class="child">
-    <button class="btn btn-danger" style="float: left;padding: 5px;" (click)="deleteRecord(item.id)">delete</button>
-    <p> name : {{ item.player }}</p>
-    <p> Nombre de couleur : {{ item.nb_color }}</p>
-    <p> Nombre de tentative : {{ item.nb_restante }}</p>
-    <p> Nombre de tentative restante : {{ item.nb_restante }}</p>
-    <p> victoire : {{ item.hasWin }}</p>
+    <div *ngFor="let item of items$ | async" class="child">
+
+        <button [hidden]="!isConnected" class="btn btn-danger" (click)="deleteRecord(item.id)">delete</button>
+        <div class="flexcontainer">
+            <div class="wrapper">
+                <p> name : {{ item.player }}</p>
+                <p> Nombre de couleur : {{ item.nb_color }}</p>
+                <p> Nombre de tentative : {{ item.nb_tentative }}</p>
+                <p> Nombre de tentative restante : {{ item.nb_restante }}</p>
+            </div>
+            <div class="imgcont" *ngIf="item.hasWin; else lose">
+                <img src="/assets/uwin.png" alt="">
+            </div>
+            
+            <ng-template #lose>
+                <div class="imgcont">
+                    <img src="/assets/ulose.png" alt="">
+                </div>
+            </ng-template>
+        </div>
     </div>
 </div>
 

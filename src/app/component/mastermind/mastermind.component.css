@@ -6,8 +6,8 @@
     justify-content: space-around;
     max-width: 600px;
     min-height: 300px;
-    background-color: antiquewhite;
-    border: 4px solid rgb(144, 4, 244);
+    background-color: transparent;
+    box-shadow: 0 0 10px 2px white;
     margin: 4rem auto;
     border-radius: 10px;
 }
@@ -21,6 +21,6 @@
 }
 @media (min-width: 615px){
     app-history{
-        border-left: 2px solid purple;
+        border-left: 2px solid white;
     }
 }

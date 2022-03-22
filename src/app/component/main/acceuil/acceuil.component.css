@@ -6,3 +6,42 @@
     margin: 0px auto;
    
 }
+.mybtn{
+    width:200px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: transparent;
+    border:1px solid white;
+    position: relative;
+    color: white;
+    transition: all 1s ease ;
+}
+.mybtn:hover{
+    color: black;
+    box-shadow: 0 0 10px 1px white;
+}
+.mybtn::before{
+    content:" ";
+    position: absolute;
+    top:0;
+    left:0;
+    width:200px;
+    height:50px;
+    transform-origin: center;
+    transform: scaleY(0);
+    background-color: aliceblue;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+.mybtn:hover::before{
+    transform: scaleY(1);
+    transform-origin: center;
+    border-radius: 15px;
+    z-index: 100;
+}
+p{
+    z-index: 2000;
+    position: relative;
+    margin-top: 10px;
+}

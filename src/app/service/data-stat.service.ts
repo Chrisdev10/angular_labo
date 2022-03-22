@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators'
 import { Stat } from 'src/models/gamestat.model';
 
 @Injectable({
@@ -8,20 +9,28 @@ import { Stat } from 'src/models/gamestat.model';
 })
 
 export class DataStatService {
-  private urlData = "http://localhost:8080/api";
+  private urlData = "https://my-json-server.typicode.com/Chrisdev10/db/api";
+  // private urlData = "http://localhost:3000/api";
+  private dataSender$ = new BehaviorSubject(null);
   constructor(
     private http: HttpClient
   ) { }
 
   getAll(): Observable<Stat[]>{
-    return this.http.get<Stat[]>(this.urlData+"/all");
+    return this.http.get<Stat[]>(this.urlData);
   }
 
   addRecord(stat: Stat){   
-    return this.http.post<Stat>(this.urlData+"/add", JSON.stringify(stat));
+    console.log(stat);
+    
+    return this.http.post<Stat>(this.urlData, stat);
   }
 
   deleteRecord(id: number){
-    return this.http.delete<Stat>(`${this.urlData}/delete/${id}`);
+    return this.http.delete<Stat>(`${this.urlData}/${id}`).pipe(tap(()=>this.dataSender$.next(null)));
+  }
+
+  public get dataSender(){
+    return this.dataSender$;
   }
 }

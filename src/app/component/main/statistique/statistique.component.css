@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
+    max-width: 1000px;
     margin:10px auto;
     height: auto;
     background-color: transparent;
@@ -13,12 +13,42 @@
     border: 2px solid white;
     border-radius: 15px;
     margin-top: 10px;
-    width: 50%;
+    max-width: 1000px;
     height: auto;
-    text-align: center;
-    color: black;
-    
+    text-align: start;
+    color: white;
+    padding: 2rem 1rem;
+}
+img{
+    width: 100px;
 }
 button{
-    flex-grow: 1;
+    display: block;
+    margin: 1rem;
 }
+.wrapper{
+    margin-left: 2rem;
+}
+.flexcontainer{
+    display: flex;
+}
+.imgcont{
+    flex-grow: 1;
+    align-self: center;
+    justify-self: center;
+}
+@media (max-width:800px){
+    .flexcontainer{
+        flex-direction: column;
+        align-items: center;
+        width:90%;
+    }
+    .containerr{
+        width:80%;
+    }
+    
+    .wrapper{
+        margin-left:1rem;
+    }
+}
+

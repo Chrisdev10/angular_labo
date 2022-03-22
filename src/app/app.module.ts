@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { FormsettingsComponent } from './component/main/formsettings/formsettings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StatistiqueComponent } from './component/main/statistique/statistique.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { StatistiqueComponent } from './component/main/statistique/statistique.c
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

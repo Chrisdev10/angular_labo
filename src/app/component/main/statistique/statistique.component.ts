@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ConnectionService } from 'src/app/service/connection.service';
 import { DataStatService } from 'src/app/service/data-stat.service';
 import { Stat } from 'src/models/gamestat.model';
 
@@ -8,14 +10,20 @@ import { Stat } from 'src/models/gamestat.model';
   styleUrls: ['./statistique.component.css']
 })
 export class StatistiqueComponent implements OnInit {
+  isConnected!:boolean;
   items: Stat[] = [];
+  items$!: Observable<Stat[]>;
   constructor(
-    private stat: DataStatService
+    private stat: DataStatService, 
+    private connection : ConnectionService
   ) { }
 
   //Get all Stat Data 
   ngOnInit(): void {
-    this.stat.getAll().subscribe(x => this.items = x);        
+    this.connection.$isConnected.subscribe(()=>{
+      this.isConnected = this.connection.isConnectChecker();
+    });
+    this.stat.dataSender.subscribe(()=> this.items$ = this.stat.getAll());
   }
 
   //Delete selected Data Record

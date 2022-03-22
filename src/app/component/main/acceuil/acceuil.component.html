@@ -1,4 +1,30 @@
 <div class="main text-center">  
-    <button class="btn btn-primary mb-4" (click)="starter()" >Play</button>
-    <button disabled class="btn btn-primary mb-4" (click)="stat()" >Statistique (no db)</button>
+    <button class="mybtn mb-4" (click)="starter()" ><p>Play</p></button>
+    <button  class="mybtn mb-4" (click)="stat()" ><p>Statistique</p></button>
+    <button  class="mybtn mb-4" (click)="open(content)"><p>Admin</p></button>
 </div> 
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Admin Login</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <form *ngIf="!this.isConnected;else showLogs">
+        <div class="mb-3">
+            <label for="user">User:</label>
+            <input id="user" class="form-control" placeholder="user" name="dp" type="text" [(ngModel)]="user">
+            
+            <label for="pwd">Password:</label>
+            <input id="pwd" class="form-control" placeholder="password" name="pwd" type="password" [(ngModel)]="password">
+                      
+        </div>
+      </form>
+      <ng-template #showLogs>
+        <h5>welcome admin</h5>
+      </ng-template>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close(sendLogs())">{{ isConnected ? 'disconnect':'connect' }}</button>
+    </div>
+  </ng-template>

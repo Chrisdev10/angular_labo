@@ -10,7 +10,7 @@ export class SampleserviceService {
   numberOfTry?: number;
   numberOfPlayer?: 'solo' | 'duo';
   arrayColor: string[] = ["red","blue","yellow","green","black","white"];
-  arraySample: string[] = ["antiquewhite","antiquewhite","antiquewhite","antiquewhite"]
+  arraySample: string[] = ["transparent","transparent","transparent","transparent"]
   passedBy: boolean = false;
   constructor() { }
   setAll(numberOf:number, numberOfTry: number, numberOfPlayer: 'solo'|'duo'){

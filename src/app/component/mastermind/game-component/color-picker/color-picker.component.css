@@ -7,7 +7,7 @@
     height: 50px;
     
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .pastille:active{
@@ -18,24 +18,19 @@
     justify-content: space-around;
 }
 .pick{
-    border: 2px solid rgb(149, 46, 133);
+    border: 2px solid white;
     margin: 50px 20px;
-}
-.pickk{
-    border-left: 2px solid rgb(149, 46, 133);
-    width: 100%;
+    color: white;
 }
 
-@media (max-width: 550px){
-    .pickk{
-        border-left: 0px;
-    }
-}
 form{
     display: flex;
     flex-direction: column;
 
 }
-form > button{
-    flex-grow: 1;
+button{
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    margin: 0.5rem;
 }
