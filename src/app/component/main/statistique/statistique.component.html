@@ -11,12 +11,12 @@
                 <p> Nombre de tentative restante : {{ item.nb_restante }}</p>
             </div>
             <div class="imgcont" *ngIf="item.hasWin; else lose">
-                <img src="/assets/uwin.png" alt="">
+                <img src="./assets/uwin.png" alt="">
             </div>
             
             <ng-template #lose>
                 <div class="imgcont">
-                    <img src="/assets/ulose.png" alt="">
+                    <img src="./assets/ulose.png" alt="">
                 </div>
             </ng-template>
         </div>
